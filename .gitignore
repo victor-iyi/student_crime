@@ -33,4 +33,5 @@ instance/
 ._*
 
 
-### Others
+### scss
+*.css.map
