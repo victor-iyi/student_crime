@@ -16,54 +16,153 @@
   <![endif]-->
 </head>
 <body class="homepage">
-    <div>
-			<!-- Header -->
-				<div id="header">
+  <div id="page-wrapper">
+    <!-- Header -->
+    <div id="header">
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="#" id="logo">Helios</a></h1>
-								<hr />
-								<p>Another fine freebie by HTML5 UP</p>
-							</header>
-							<footer>
-								<a href="#banner" class="button circled scrolly">Start</a>
-							</footer>
-						</div>
+      <!-- Inner -->
+      <div class="inner">
+        <header>
+          <h1><a href="/" id="logo">Crime Tracker</a></h1>
+          <hr/>
+          <p>By Emmanuel: CSC/2011/419</p>
+        </header>
+        <footer>
+          <a href="#banner" class="button circled scrolly">Start</a>
+        </footer>
+      </div>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li>
-									<a href="#">Dropdown</a>
-									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-										<li>
-											<a href="#">And a submenu &hellip;</a>
-											<ul>
-												<li><a href="#">Lorem ipsum dolor</a></li>
-												<li><a href="#">Phasellus consequat</a></li>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Veroeros feugiat</a></li>
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-							</ul>
-						</nav>
-
-				</div>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul>
+          <li><a href="{% url 'public:index' %}">Home</a></li>
+          <li>
+            <a href="#">Admin</a>
+            <ul>
+              <li><a href="#">Suspects</a></li>
+              <li><a href="#">Sunday Attendance</a></li>
+              <li><a href="#">Monday Attendance</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'students:index' %}">Students</a></li>
+          <li><a href="#">Chapel</a></li>
+        </ul>
+      </nav>
 
     </div>
+
+    <!-- Banner -->
+    <section id="banner">
+      <header>
+        <h2>Wesley University's crime tracker</h2>
+        <p>
+          The below listed students have been found guilty of at least one offense. And their names
+          are yet to be cleared by the school administrator.
+        </p>
+      </header>
+    </section>
+
+    <!-- Carousel -->
+    <section class="carousel">
+      <div class="reel">
+        {% load staticfiles %}
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">John Doe</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic02.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">Jimmy Doe</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic03.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">Jane Doe</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic04.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">John Smith</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic05.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">Foo bar</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">John Doe</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic02.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">Jimmy Doe</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic03.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">Jane Doe</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic04.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">John Smith</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+        <article>
+          <a href="#" class="image featured"><img src="{% static 'images/pic05.jpg' %}" alt=""/></a>
+          <header>
+            <h3><a href="#">Foo bar</a></h3>
+          </header>
+          <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
+        </article>
+
+      </div>
+    </section>
+
+
     {% block body %}
     {% endblock %}
+  </div>
+  {% load staticfiles %}
+  <!-- Scripts -->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+  <script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+  <script src="{% static 'js/jquery.onvisible.min.js' %}"></script>
+  <script src="{% static 'js/skel.min.js' %}"></script>
+  <script src="{% static 'js/util.js' %}"></script>
+  <!--[if lte IE 8]><script src="{% static 'js/ie/respond.min.js' %}"></script><![endif]-->
+  <script src="{% static 'js/main.js' %}"></script>
+
 </body>
 </html>
