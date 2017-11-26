@@ -20,18 +20,6 @@
   <!-- Header -->
   <div id="header">
 
-    <!-- Inner -->
-    <div class="inner">
-      <header>
-        <h1><a href="/" id="logo">Crime Tracker</a></h1>
-        <hr/>
-        <p>By Emmanuel: CSC/2011/419</p>
-      </header>
-      <footer>
-        <a href="#banner" class="button circled scrolly">Start</a>
-      </footer>
-    </div>
-
     <!-- Nav -->
     <nav id="nav">
       <ul>
@@ -46,8 +34,16 @@
         </li>
         <li><a href="{% url 'students:index' %}">Students</a></li>
         <li><a href="#">Chapel</a></li>
+        <li><a href="{% url 'public:about' %}">About</a></li>
       </ul>
     </nav>
+
+    <!-- Inner -->
+    <div class="inner">
+      <header>
+        <h1><a href="/" id="logo">Crime Tracker</a></h1>
+      </header>
+    </div>
 
   </div>
 

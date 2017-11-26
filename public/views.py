@@ -6,5 +6,5 @@ def index(request):
     return render(request, 'public/index.html')
 
 
-def contact(request):
-    return render(request, 'public/contact.html')
+def about(request):
+    return render(request, 'public/about.html')
