@@ -7,8 +7,11 @@
   
   Copyright © 2017. Victor. All rights reserved.
 """
-from django.conf.urls import  url
+from django.conf.urls import url
+from . import apps, views
 
-urlpatters = [
-    url(r'^$', )
+app_name = apps.StudentsConfig.name
+
+urlpatterns = [
+    url('^$', views.index, name='index'),
 ]

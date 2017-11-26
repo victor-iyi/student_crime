@@ -11,4 +11,4 @@ def contact(request):
         'You can contact me through e-mail, whatsapp, twitter, instagram',
         'my email is javafolabi@gmail.com, VictorIAfolabi1, victor_iyiola'
     ]
-    return render(request, 'public/pages.html', {'contents': contents})
+    return render(request, 'public/contact.html', {'contents': contents})
