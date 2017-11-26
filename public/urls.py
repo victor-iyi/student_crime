@@ -14,4 +14,5 @@ app_name = apps.PublicConfig.name
 
 urlpatterns = [
     url('^$', views.index, name='index'),
+    url('^contact/$', views.contact, name='contact')
 ]

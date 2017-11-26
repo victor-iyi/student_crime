@@ -7,7 +7,7 @@
   <meta name="description" content="Tracking student's crime">
   <meta name="author" content="Victor I. Afolabi">
   <!-- <link rel="icon" href="../../favicon.ico"> -->
-  <title> {% block title %}{% endblock %} &bull; Victor I. Afolabi &#10004; </title>
+  <title> {% block title %}{% endblock %} &bull; Crime Tracker </title>
   {% load staticfiles %}
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
   <!--[if lt IE 9]>
@@ -16,8 +16,9 @@
   <![endif]-->
 </head>
 <body>
-{% block body %}
-
-{% endblock %}
+  <div>
+    {% block body %}
+    {% endblock %}
+  </div>
 </body>
 </html>
