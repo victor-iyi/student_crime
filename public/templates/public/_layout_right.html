@@ -17,6 +17,7 @@
 </head>
 <body class="right-sidebar">
 <div id="page-wrapper">
+
   <!-- Header -->
   <div id="header">
 
@@ -47,102 +48,8 @@
 
   </div>
 
-  <!-- Banner -->
-  <section id="banner">
-    <header>
-      <h2>Wesley University's crime tracker</h2>
-      <p>
-        The below listed students have been found guilty of at least one offense. And their names
-        are yet to be cleared by the school administrator.
-      </p>
-    </header>
-  </section>
-
-  <!-- Carousel -->
-  <section class="carousel">
-    <div class="reel">
-      {% load staticfiles %}
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">John Doe</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic02.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">Jimmy Doe</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic03.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">Jane Doe</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic04.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">John Smith</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic05.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">Foo bar</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">John Doe</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic02.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">Jimmy Doe</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic03.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">Jane Doe</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic04.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">John Smith</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-      <article>
-        <a href="#" class="image featured"><img src="{% static 'images/pic05.jpg' %}" alt=""/></a>
-        <header>
-          <h3><a href="#">Foo bar</a></h3>
-        </header>
-        <p>Stealing two laptops and three iPhones during Monday chapel 23/02/2017</p>
-      </article>
-
-    </div>
-  </section>
+  <!-- Body -->
+  {% block body %}
+  {% endblock %}
 
 {% include 'public/_includes/_footer.html' %}
