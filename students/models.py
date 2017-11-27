@@ -9,9 +9,3 @@ class Students(models.Model):
 
     def __str__(self):
         return f'Students<{self.name}, {self.matric}>'
-
-
-class Suspects(models.Model):
-    student = models.ForeignKey(Students, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now=True)
-    description = models.TextField()
