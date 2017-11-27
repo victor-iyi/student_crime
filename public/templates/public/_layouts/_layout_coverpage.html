@@ -20,6 +20,9 @@
 
   <!-- Header -->
   <div id="header">
+
+    {% include 'public/_includes/_nav.html' %}
+
     <!-- Inner -->
     <div class="inner">
       <header>
@@ -31,23 +34,7 @@
         <a href="#banner" class="button circled scrolly">Start</a>
       </footer>
     </div>
-    <!-- Nav -->
-    <nav id="nav">
-      <ul>
-        <li><a href="{% url 'public:index' %}">Home</a></li>
-        <li>
-          <a href="#">Admin</a>
-          <ul>
-            <li><a href="#">Suspects</a></li>
-            <li><a href="#">Sunday Attendance</a></li>
-            <li><a href="#">Monday Attendance</a></li>
-          </ul>
-        </li>
-        <li><a href="{% url 'students:index' %}">Students</a></li>
-        <li><a href="#">Chapel</a></li>
-        <li><a href="{% url 'public:about' %}">About</a></li>
-      </ul>
-    </nav>
+
   </div>
 
   <!-- Body -->

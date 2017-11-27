@@ -1,0 +1,20 @@
+<!-- Nav -->
+<nav id="nav">
+  <ul>
+    <!-- dropdown -->
+    <!--
+        <li>
+          <a href="#">Admin</a>
+          <ul>
+            {#              <li><a href="{% url 'suspects:index' %}">Suspects</a></li>#}
+            <li><a href="#">Sunday Attendance</a></li>
+            <li><a href="#">Monday Attendance</a></li>
+          </ul>
+        </li>
+        -->
+    <li><a href="{% url 'public:index' %}">Home</a></li>
+    <li><a href="{% url 'students:index' %}">Students</a></li>
+    <li><a href="{% url 'suspects:index' %}">Suspects</a></li>
+    <li><a href="{% url 'public:about' %}">About</a></li>
+  </ul>
+</nav>
