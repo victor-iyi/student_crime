@@ -14,4 +14,6 @@ app_name = apps.StudentsConfig.name
 
 urlpatterns = [
     url('^$', views.index, name='index'),
+    url('^all$', views.StudentsAll.as_view(), name='all'),
+    url('^suspects$', views.SuspectsAll.as_view(), name='suspects'),
 ]
