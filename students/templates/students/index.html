@@ -3,5 +3,45 @@
 {% block title %} Students {% endblock %}
 
 {% block body %}
-  <h1>Students home page.</h1>
+  {# List of students by departments #}
+  {% if students %}
+    {# {% for department in departments %} #}
+    {# loop through all departments #}
+    <!-- Departments -->
+    <section id="banner">
+      <header>
+        {# <h2>{{ student.department }}</h2> #}
+        {# <p><strong>{{ student.department }}</strong> students are listed here</p> #}
+        <h2><strong>Information and Communication Technology</strong> (ICT)</h2>
+        <p>ICT students are listed here</p>
+      </header>
+    </section>
+    <!-- Students -->
+    <div class="carousel">
+      <div class="reel">
+        {% load staticfiles %}
+        {% for student in students %}
+          {# Single student info #}
+          <article>
+            <a href="{% url 'students:detail' student.pk %}" class="image featured">
+              <img src="{% static student.image %}" alt="{{ student.name }}"/>
+            </a>
+            <header>
+              <h3><a href="{% url 'students:detail' student.pk %}">{{ student.name }}</a></h3>
+            </header>
+            <p>{{ student.matric }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+    {# {% endfor %} #}
+  {% else %}
+    <section id="banner">
+      <header>
+        <h2>No students found</h2>
+        <p>No students found</p>
+      </header>
+    </section>
+  {% endif %}
+
 {% endblock %}
