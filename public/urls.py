@@ -13,6 +13,6 @@ from . import views, apps
 app_name = apps.PublicConfig.name
 
 urlpatterns = [
-    url('^$', views.index, name='index'),
-    url('^about/$', views.about, name='about')
+    url(r'^$', views.index, name='index'),
+    url(r'^about/$', views.about, name='about'),
 ]
