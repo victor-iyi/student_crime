@@ -1,8 +1,7 @@
 from django.db import models
 
 
-# TODO: Migrations cannot be made. Fix it!
-class Students(models.Model):
+class Student(models.Model):
     name = models.CharField(max_length=255, name='name')
     GENDER = (('F', 'female'), ('M', 'male'))
     gender = models.CharField(max_length=1, choices=GENDER, name='gender')

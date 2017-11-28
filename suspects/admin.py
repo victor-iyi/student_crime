@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Suspects
+
+from .models import Suspect
 
 # Register your models here.
-admin.site.register(Suspects)
+admin.site.register(Suspect)

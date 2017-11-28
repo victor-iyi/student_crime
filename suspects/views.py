@@ -1,19 +1,16 @@
 from django.views.generic import ListView, DetailView
 
-from .models import Suspects
+from .models import Suspect
 
 
-# /suspects
-class SuspectsAll(ListView):
+class Index(ListView):
     template_name = 'suspects/index.html'
-    context_object_name = 'suspects'
 
     def get_queryset(self):
-        return Suspects.objects.all()
+        return Suspect.objects.all()
 
 
-# /suspects/12
-class SuspectsDetail(DetailView):
+class Detail(DetailView):
     template_name = 'suspects/detail.html'
     pk_url_kwarg = 'suspect_id'
-    model = Suspects
+    model = Suspect

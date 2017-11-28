@@ -3,18 +3,18 @@
   A.I. Engineer & Software developer
   javafolabi@gmail.com
   
-  Created on 27 November, 2017 @ 1:42 PM.
+  Created on 28 November, 2017 @ 12:31 PM.
   
   Copyright © 2017. Victor. All rights reserved.
 """
 
 from django.conf.urls import url
-from . import apps, views
 
+from . import apps, views
 
 app_name = apps.SuspectsConfig.name
 
 urlpatterns = [
-    url(r'^$', views.SuspectsAll.as_view(), name='index'),
-    url(r'^(?P<pk>\d+)$', views.SuspectsDetail.as_view(), name='detail'),
+    url(r'^$', views.Index.as_view(), name='index'),
+    url(r'^(?P<pk>\d+)$', views.Detail.as_view(), name='detail'),
 ]
