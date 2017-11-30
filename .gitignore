@@ -36,3 +36,6 @@ instance/
 
 ### scss
 *.css.map
+
+### Uploads
+/public/static/images/students/
