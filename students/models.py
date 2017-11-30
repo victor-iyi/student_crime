@@ -1,4 +1,7 @@
+from django.core.files.storage import FileSystemStorage
 from django.db import models
+
+fs = FileSystemStorage(location='public/static/')
 
 
 class Student(models.Model):
@@ -13,7 +16,8 @@ class Student(models.Model):
     LEVEL = (('100', '100 level'), ('200', '200 level'), ('300', '300 level'),
              ('400', '400 level'), ('500', '500 level'))
     level = models.CharField(max_length=10, choices=LEVEL, name='level')
-    image = models.ImageField(width_field=368, height_field=256, name='image')
+    UPLOAD_PATH = 'images/students'
+    image = models.ImageField(storage=fs, upload_to=UPLOAD_PATH, default='', name='image')
 
     def __str__(self):
         return f'{self.name}, {self.matric}'

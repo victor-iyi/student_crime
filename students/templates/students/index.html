@@ -19,12 +19,11 @@
     <!-- Students -->
     <div class="carousel">
       <div class="reel">
-        {% load staticfiles %}
         {% for student in students %}
           {# Single student info #}
           <article>
             <a href="{% url 'students:detail' student.pk %}" class="image featured">
-              <img src="{% static student.image %}" alt="{{ student.name }}"/>
+              <img src="{{ student.image.url }}" alt="{{ student.name }}" />
             </a>
             <header>
               <h3><a href="{% url 'students:detail' student.pk %}">{{ student.name }}</a></h3>

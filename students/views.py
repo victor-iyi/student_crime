@@ -6,6 +6,7 @@ from students.models import Student
 # /students
 class Index(ListView):
     template_name = 'students/index.html'
+    context_object_name = 'students'
 
     def get_queryset(self):
         return Student.objects.all()
