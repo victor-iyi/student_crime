@@ -7,6 +7,7 @@ from students.models import Student
 # Create your views here.
 class HomePage(ListView):
     template_name = 'public/index.html'
+    context_object_name = 'students'
 
     def get_queryset(self):
         return Student.objects.all()
