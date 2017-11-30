@@ -13,7 +13,6 @@ class Student(models.Model):
     LEVEL = (('100', '100 level'), ('200', '200 level'), ('300', '300 level'),
              ('400', '400 level'), ('500', '500 level'))
     level = models.CharField(max_length=10, choices=LEVEL, name='level')
-
     image = models.ImageField(width_field=368, height_field=256, name='image')
 
     def __str__(self):
