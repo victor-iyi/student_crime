@@ -9,7 +9,7 @@
 """
 from django.conf.urls import url
 
-from . import apps, views
+from public import apps, views
 
 app_name = apps.PublicConfig.name
 

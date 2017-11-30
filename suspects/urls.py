@@ -10,7 +10,7 @@
 
 from django.conf.urls import url
 
-from . import apps, views
+from suspects import apps, views
 
 app_name = apps.SuspectsConfig.name
 

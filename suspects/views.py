@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView
 
-from .models import Suspect
+from suspects.models import Suspect
 
 
 class Index(ListView):

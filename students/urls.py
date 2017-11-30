@@ -8,7 +8,7 @@
   Copyright © 2017. Victor. All rights reserved.
 """
 from django.conf.urls import url
-from . import apps, views
+from students import apps, views
 
 app_name = apps.StudentsConfig.name
 
