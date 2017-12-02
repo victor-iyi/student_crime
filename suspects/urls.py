@@ -16,5 +16,5 @@ app_name = apps.SuspectsConfig.name
 
 urlpatterns = [
     url(r'^$', views.Index.as_view(), name='index'),
-    url(r'^(?P<pk>\d+)$', views.Detail.as_view(), name='detail'),
+    url(r'^(?P<suspect_id>\d+)$', views.Detail.as_view(), name='detail'),
 ]
