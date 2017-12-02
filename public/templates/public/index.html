@@ -1,9 +1,22 @@
-{% extends 'public/_layouts/_layout_coverpage.html' %}
+{% extends 'public/_layouts/_coverpage.html' %}
 
 {% block title %} Home {% endblock %}
 
-{% block body %}
 
+{% block landing %}
+  <div class="inner">
+    <header>
+      <h1><a href="{% url 'suspects:index' %}" id="logo">Crime Tracker</a></h1>
+      <hr/>
+      <p>By Emmanuel: CSC/2011/419</p>
+    </header>
+    <footer>
+      <a href="#banner" class="button circled scrolly">Start</a>
+    </footer>
+  </div>
+{% endblock %}
+
+{% block body %}
   <!-- Banner -->
   <section id="banner">
     <header>

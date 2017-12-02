@@ -1,7 +1,13 @@
-{% extends 'public/_layouts/_layout.html' %}
+{% extends 'public/_layouts/_coverpage.html' %}
 
-{% block title %} ERROR 500: Internal server error. {% endblock %}
+{% block title %} 500 | Internal Server Error {% endblock %}
 
-{% block body %}
-  <h2>This is a 500 ERROR!</h2>
+{% block landing %}
+  <div class="inner">
+    <header>
+      <h1><a href="{% url 'public:index' %}" id="logo">ERROR 500</a></h1>
+      <hr/>
+      <p>Internal server error. <a href="{% url 'public:index' %}">Return home</a></p>
+    </header>
+  </div>
 {% endblock %}

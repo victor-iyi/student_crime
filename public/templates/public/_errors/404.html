@@ -1,7 +1,13 @@
-{% extends 'public/_layouts/_layout.html' %}
+{% extends 'public/_layouts/_coverpage.html' %}
 
-{% block title %} ERROR 404: Page not found {% endblock %}
+{% block title %} 404 | Page not found {% endblock %}
 
-{% block body %}
-  <h2>This is a 404 ERROR!</h2>
+{% block landing %}
+  <div class="inner">
+    <header>
+      <h1><a href="{% url 'public:index' %}" id="logo">ERROR 404</a></h1>
+      <hr/>
+      <p>The page you're looking for was not found. <a href="{% url 'public:index' %}">Return home.</a></p>
+    </header>
+  </div>
 {% endblock %}

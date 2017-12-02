@@ -18,7 +18,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="no-sidebar">
+<body class="homepage">
 <div id="page-wrapper">
 
   <!-- Header -->
@@ -26,12 +26,8 @@
 
     {% include 'public/_includes/_nav.html' %}
 
-    <!-- Inner -->
-    <div class="inner">
-      <header>
-        <h1><a href="{% url 'suspects:index' %}" id="logo">Crime Tracker</a></h1>
-      </header>
-    </div>
+    {% block landing %}
+    {% endblock %}
 
   </div>
 

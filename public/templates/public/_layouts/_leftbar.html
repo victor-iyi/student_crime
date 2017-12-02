@@ -9,16 +9,16 @@
 
   <title> {% block title %}{% endblock %} &bull; Crime Tracker </title>
 
-<!-- links -->
+  <!-- links -->
   {% load staticfiles %}
-  <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/favicon.ico' %}">
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="right-sidebar">
+<body class="left-sidebar">
 <div id="page-wrapper">
 
   <!-- Header -->
@@ -26,12 +26,7 @@
 
     {% include 'public/_includes/_nav.html' %}
 
-    <!-- Inner -->
-    <div class="inner">
-      <header>
-        <h1><a href="{% url 'suspects:index' %}" id="logo">Crime Tracker</a></h1>
-      </header>
-    </div>
+    {% include 'public/_includes/_landing.html' %}
 
   </div>
 
