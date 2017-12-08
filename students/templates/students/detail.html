@@ -1,7 +1,34 @@
 {% extends 'public/_layouts/_main.html' %}
 
-{% block title %} Student {% endblock %}
+{% block title %} {{ student.name }} {% endblock %}
 
 {% block body %}
-  <h1>Student Detail</h1>
+    <div class="wrapper style1">
+    <div class="container">
+
+      <div class="row 200%">
+        <!-- Main view -->
+        <div class="8u 12u(mobile)">
+          <article id="main">
+            <header>
+              <h2><a href="">{{ student.name }}</a></h2>
+              <p>Matric number <strong>{{ student.matric }}</strong> ({{ student.department }},
+                {{ student.level }} level)</p>
+            </header>
+            <section>
+              Something
+            </section>
+          </article>
+        </div>
+        <!-- Sidebar -->
+        <div class="4u 12u(mobile)" id="sidebar">
+
+        </div>
+      </div>
+
+      <hr>
+
+    </div>
+  </div>
+
 {% endblock %}

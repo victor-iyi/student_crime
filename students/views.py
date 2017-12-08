@@ -9,10 +9,12 @@ from students.models import Student
 # /students
 class Index(ListView):
     template_name = 'students/index.html'
-    context_object_name = 'students'
+    __col_name = 'department'
+    context_object_name = __col_name
 
     def get_queryset(self):
-        return Student.objects.all()
+        cols = Student.objects.values_list(self.__col_name, flat=True)
+        return [Student.objects.filter(department=col) for col in set(cols)]
 
 
 # /students/39

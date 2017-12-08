@@ -3,38 +3,54 @@
 {% block title %} Students {% endblock %}
 
 {% block body %}
-  {# List of students by departments #}
-  {% if students %}
-    {# {% for department in departments %} #}
-    {# loop through all departments #}
-    <!-- Departments -->
-    <section id="banner">
-      <header>
-        {# <h2>{{ student.department }}</h2> #}
-        {# <p><strong>{{ student.department }}</strong> students are listed here</p> #}
-        <h2><strong>Information and Communication Technology</strong> (ICT)</h2>
-        <p>ICT students are listed here</p>
-      </header>
-    </section>
-    <!-- Students -->
-    <div class="carousel">
-      <div class="reel">
-      {% load staticfiles %}
-        {% for student in students %}
-          {# Single student info #}
-          <article>
-            <a href="{% url 'students:detail' student.pk %}" class="image featured">
-              <img src="{% static student.image.url %}" alt="{{ student.name }}" />
-            </a>
-            <header>
-              <h3><a href="{% url 'students:detail' student.pk %}">{{ student.name }}</a></h3>
-            </header>
-            <p>{{ student.matric }}</p>
-          </article>
-        {% endfor %}
-      </div>
+  <section id="banner">
+    <article>
+    <div>
+      <a href="{% url 'students:student-register' %}" class="">
+        <h2 class="fa fa-user-plus">Register new student</h2>
+      </a>
     </div>
-    {# {% endfor %} #}
+    </article>
+  </section>
+  {# List of students by departments #}
+  {% if department %}
+    {# loop through all departments #}
+    {% for dept in department %}
+      {% if dept %}
+        <!-- Department details -->
+        <section id="banner">
+          <header>
+            <h2>{{ dept.first.get_department_display }} department</h2>
+            <p><strong>{{ dept.count }}</strong> student(s) are listed here</p>
+          </header>
+        </section>
+        <!-- Students -->
+        <div class="carousel">
+          <div class="reel">
+            {% load staticfiles %}
+            {% for student in dept %}
+              {# Single student info #}
+              <article>
+                <a href="{% url 'students:detail' student.pk %}" class="image featured">
+                  <img src="{% static student.image.url %}" alt="{{ student.name }}"/>
+                </a>
+                <header>
+                  <h3><a href="{% url 'students:detail' student.pk %}">{{ student.name }}</a></h3>
+                </header>
+                <p>{{ student.matric }} - {{ student.department }}</p>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      {% else %}
+        <section id="banner">
+          <header>
+            <h2>No students found</h2>
+            <p>No students found</p>
+          </header>
+        </section>
+      {% endif %}
+    {% endfor %}
   {% else %}
     <section id="banner">
       <header>

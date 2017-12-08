@@ -17,7 +17,7 @@ urlpatterns = [
     url(r'^$', views.Index.as_view(), name='index'),
     url(r'^(?P<student_id>\d+)$', views.Detail.as_view(), name='detail'),
     # Student CRUD
-    url(r'^register/$', views.StudentCreate.as_view(), name='student-create'),
+    url(r'^register/$', views.StudentCreate.as_view(), name='student-register'),
     url(r'^<int:pk>/$', views.StudentUpdate.as_view(), name='student-update'),
     url(r'^<int:pk>/delete/$', views.StudentDelete.as_view(), name='student-delete'),
 ]
