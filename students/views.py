@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from students.models import Student
 
@@ -21,9 +22,11 @@ class Detail(DetailView):
     model = Student
 
 
-class StudentCreate(CreateView):
+class StudentCreate(SuccessMessageMixin, CreateView):
     model = Student
     fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
+    success_url = '/students/'
+    success_message = '%(name) with matric number %(matric) was successfully created!'
 
 
 class StudentUpdate(UpdateView):
@@ -31,9 +34,10 @@ class StudentUpdate(UpdateView):
     fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
 
 
-class StudentDelete(DeleteView):
+class StudentDelete(SuccessMessageMixin, DeleteView):
     model = Student
     success_url = reverse_lazy('students:index')
+    success_message = '%(name)s was successfully deleted!'
 
 
 """
