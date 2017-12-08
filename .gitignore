@@ -19,7 +19,7 @@ instance/
 
 
 ### VisualStudioCode template
-.vscode/*
+.vscode
 
 
 ### JetBrains template
@@ -38,4 +38,4 @@ instance/
 *.css.map
 
 ### Uploads
-/public/static/images/students/
+/public/static/images/students
