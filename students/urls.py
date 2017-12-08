@@ -14,9 +14,9 @@ app_name = apps.StudentsConfig.name
 
 urlpatterns = [
     path('', views.Index.as_view(), name='index'),
-    path('<int:student_id>/', views.Detail.as_view(), name='detail'),
+    path('details/<int:pk>/', views.Detail.as_view(), name='detail'),
     # Student CRUD
-    path('register/', views.StudentCreate.as_view(), name='student-register'),
-    path('<int:pk>/', views.StudentUpdate.as_view(), name='student-update'),
-    path('<int:pk>/delete/', views.StudentDelete.as_view(), name='student-delete'),
+    path('register/', views.StudentCreate.as_view(), name='register'),
+    path('update/<int:pk>/', views.StudentUpdate.as_view(), name='update'),
+    path('delete/<int:pk>', views.StudentDelete.as_view(), name='delete'),
 ]

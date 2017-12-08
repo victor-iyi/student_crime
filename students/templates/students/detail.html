@@ -9,16 +9,21 @@
       <div class="row 200%">
         <!-- Main view -->
         <div class="8u 12u(mobile)">
-          <article id="main">
+          <section id="main">
             <header>
               <h2><a href="">{{ student.name }}</a></h2>
               <p>Matric number <strong>{{ student.matric }}</strong> ({{ student.department }},
                 {{ student.level }} level)</p>
             </header>
+            {% load staticfiles %}
             <section>
-              Something
+              <img src="{% static student.image.url %}" alt="{{ student.name }}"/>
             </section>
-          </article>
+            <hr>
+            <footer>
+              <a class="button" href="{% url 'students:update' student.pk %}">Update record</a>
+            </footer>
+          </section>
         </div>
         <!-- Sidebar -->
         <div class="4u 12u(mobile)" id="sidebar">

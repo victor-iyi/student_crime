@@ -20,7 +20,6 @@ class Index(ListView):
 # /students/39
 class Detail(DetailView):
     template_name = 'students/detail.html'
-    pk_url_kwarg = 'student_id'
     model = Student
 
 
