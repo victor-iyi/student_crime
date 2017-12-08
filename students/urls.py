@@ -15,5 +15,6 @@ app_name = apps.StudentsConfig.name
 
 urlpatterns = [
     url(r'^$', views.Index.as_view(), name='index'),
+    url(r'^register/$', views.Register.as_view(), name='register'),
     url(r'^(?P<student_id>\d+)$', views.Detail.as_view(), name='detail'),
 ]
