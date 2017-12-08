@@ -26,5 +26,8 @@ class Student(models.Model):
     UPLOAD_PATH = f'images/{StudentsConfig.name}'
     image = models.ImageField(storage=fs, upload_to=UPLOAD_PATH, default='', name='image')
 
+    # def get_absolute_url(self):
+    #     return reverse('students:detail', kwargs={'pk': self.pk})
+
     def __str__(self):
         return f'{self.name}, {self.matric}'

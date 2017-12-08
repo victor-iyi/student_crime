@@ -1,12 +1,37 @@
-{% extends 'public/_layouts/_main.html' %}
+{% extends 'public/_layouts/_rightbar.html' %}
 
 {% block title %} Register {% endblock %}
 
 {% block body %}
-  <h1>Student Registration</h1>
-  <form action="">
-    {% csrf_token %}
-    <label for="name">Student Name</label>
-    <input type="text" placeholder="First-name Last-name">
-  </form>
+  <div class="wrapper style1">
+    <div class="container">
+
+      <div class="row 200%">
+        <!-- Main view -->
+        <div class="8u 12u(mobile)">
+          <article id="main">
+            <header>
+              <h2><a href="">Registration</a></h2>
+              <p>New student's registration form</p>
+            </header>
+            <form action="" class="uniform" enctype="multipart/form-data">
+              {% csrf_token %}
+              {% include 'students/_includes/_form.html' %}
+              <footer>
+                <input type="submit" value="Register" class="button">
+              </footer>
+            </form>
+          </article>
+        </div>
+        <!-- Sidebar -->
+        <div class="4u 12u(mobile)" id="sidebar">
+
+        </div>
+      </div>
+
+      <hr>
+
+    </div>
+  </div>
+
 {% endblock %}

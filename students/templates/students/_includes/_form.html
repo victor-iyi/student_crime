@@ -1,0 +1,15 @@
+<ul>
+  {% for field in form %}
+    <li class="form-group">
+      {#  Error message  #}
+      <div class="error">
+        <span class="small">{{ field.errors }}</span>
+      </div>
+      {# Form widget #}
+      <section>
+        <label for="{{ field.id }}">{{ field.label_tag }}</label>
+        {{ field }}
+      </section>
+    </li>
+  {% endfor %}
+</ul>
