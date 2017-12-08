@@ -1,4 +1,6 @@
-from django.views.generic import ListView, DetailView, FormView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from students.models import Student
 
@@ -19,8 +21,19 @@ class Detail(DetailView):
     model = Student
 
 
-class Register(FormView):
-    template_name = 'students/register.html'
+class StudentCreate(CreateView):
+    model = Student
+    fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
+
+
+class StudentUpdate(UpdateView):
+    model = Student
+    fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
+
+
+class StudentDelete(DeleteView):
+    model = Student
+    success_url = reverse_lazy('students:index')
 
 
 """
