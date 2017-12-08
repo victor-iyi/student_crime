@@ -1,6 +1,6 @@
 {% extends 'public/_layouts/_rightbar.html' %}
 
-{% block title %} Register {% endblock %}
+{% block title %} Update {% endblock %}
 
 {% block body %}
   <div class="wrapper style1">
@@ -11,14 +11,14 @@
         <div class="8u 12u(mobile)">
           <article id="main">
             <header>
-              <h2><a href="">Registration</a></h2>
-              <p>New student's registration form</p>
+              <h2><a href="">Student's info update</a></h2>
+              <p>Update {{ student.name }}'s details</p>
             </header>
             <form action="" method="POST" class="uniform" enctype="multipart/form-data">
               {% csrf_token %}
               {% include 'students/_includes/_form.html' %}
               <footer>
-                <input type="submit" value="Register" class="button">
+                <input type="submit" value="Update" class="button">
               </footer>
             </form>
           </article>

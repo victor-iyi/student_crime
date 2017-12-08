@@ -28,11 +28,10 @@ class StudentCreate(CreateView, SuccessMessageMixin):
     template_name = 'students/register.html'
     model = Student
     fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
-    success_url = '/students/'
-    success_message = '%(name) with matric number %(matric) was successfully created!'
 
 
 class StudentUpdate(UpdateView):
+    template_name = 'students/update.html'
     model = Student
     fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
 

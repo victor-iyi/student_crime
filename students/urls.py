@@ -7,17 +7,16 @@
   
   Copyright © 2017. Victor. All rights reserved.
 """
-from django.conf.urls import url
-
+from django.urls import path
 from students import apps, views
 
 app_name = apps.StudentsConfig.name
 
 urlpatterns = [
-    url(r'^$', views.Index.as_view(), name='index'),
-    url(r'^(?P<student_id>\d+)$', views.Detail.as_view(), name='detail'),
+    path('', views.Index.as_view(), name='index'),
+    path('<int:student_id>/', views.Detail.as_view(), name='detail'),
     # Student CRUD
-    url(r'^register/$', views.StudentCreate.as_view(), name='student-register'),
-    url(r'^<int:pk>/$', views.StudentUpdate.as_view(), name='student-update'),
-    url(r'^<int:pk>/delete/$', views.StudentDelete.as_view(), name='student-delete'),
+    path('register/', views.StudentCreate.as_view(), name='student-register'),
+    path('<int:pk>/', views.StudentUpdate.as_view(), name='student-update'),
+    path('<int:pk>/delete/', views.StudentDelete.as_view(), name='student-delete'),
 ]

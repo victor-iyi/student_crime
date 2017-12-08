@@ -7,13 +7,13 @@
   
   Copyright © 2017. Victor. All rights reserved.
 """
-from django.conf.urls import url
+from django.urls import path
 
 from public import apps, views
 
 app_name = apps.PublicConfig.name
 
 urlpatterns = [
-    url(r'^$', views.HomePage.as_view(), name='index'),
-    url(r'^about/$', views.about, name='about'),
+    path('', views.HomePage.as_view(), name='index'),
+    path('about/', views.about, name='about'),
 ]
