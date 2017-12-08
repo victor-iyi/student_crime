@@ -32,7 +32,7 @@
               {# Single student info #}
               <article>
                 <a href="{% url 'students:detail' student.pk %}" class="image featured">
-                  <img src="{% static student.image.url %}" alt="{{ student.name }}"/>
+                  <img src="{% static student.image.url %}" width="368" height="256" alt="{{ student.name }}"/>
                 </a>
                 <header>
                   <h3><a href="{% url 'students:detail' student.pk %}">{{ student.name }}</a></h3>
