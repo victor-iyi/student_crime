@@ -23,38 +23,22 @@ class Detail(DetailView):
     model = Student
 
 
+# /students/register
 class StudentCreate(CreateView, SuccessMessageMixin):
     template_name = 'students/register.html'
     model = Student
     fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
 
 
+# /students/update/39
 class StudentUpdate(UpdateView):
     template_name = 'students/update.html'
     model = Student
     fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
 
 
+# /students/delete/39
 class StudentDelete(DeleteView, SuccessMessageMixin):
     model = Student
     success_url = reverse_lazy('students:index')
     success_message = '%(name)s was successfully deleted!'
-
-
-"""
-from django.shortcuts import render_to_response
-from django.template import RequestContext
-
-def e_handle404(request):
-    context = RequestContext(request)
-    response = render_to_response('404.html', context)
-    response.status_code = 404
-    return response
-
-
-def e_handle500(request):
-    context = RequestContext(request)
-    response = render_to_response('500.html', context)
-    response.status_code = 500
-    return response
-"""
