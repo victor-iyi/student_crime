@@ -33,7 +33,7 @@ class StudentCreate(CreateView):
 class StudentUpdate(UpdateView):
     template_name = 'students/update.html'
     model = Student
-    # fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
+    fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
 
 
 # /students/delete/39
