@@ -5,11 +5,11 @@
 {% block body %}
   <section id="banner">
     <article>
-    <div>
-      <a href="{% url 'students:register' %}" class="">
-        <h2 class="fa fa-user-plus">&nbsp;Register new student</h2>
-      </a>
-    </div>
+      <div>
+        <a href="{% url 'students:register' %}" class="">
+          <h2 class="fa fa-user-plus">&nbsp;Register new student</h2>
+        </a>
+      </div>
     </article>
   </section>
   {# List of students by departments #}
@@ -38,6 +38,24 @@
                   <h3><a href="{% url 'students:detail' student.pk %}">{{ student.name }}</a></h3>
                 </header>
                 <p>{{ student.matric }} - {{ student.department }}</p>
+                <footer>
+                  <!-- Delete -->
+                  <form action="{% url 'students:delete' student.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="student_id" value="{{ student.id }}">
+                    <button class="help-icon" title="delete">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </form>
+                  <!-- Update -->
+                  <form action="{% url 'students:update' student.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="student_id" value="{{ student.id }}">
+                    <button class="help-icon" title="update">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                  </form>
+                </footer>
               </article>
             {% endfor %}
           </div>
@@ -46,7 +64,7 @@
         <section id="banner">
           <header>
             <h2>No students found</h2>
-            <p>No students found</p>
+            <p>This department has no students!</p>
           </header>
         </section>
       {% endif %}
@@ -55,7 +73,7 @@
     <section id="banner">
       <header>
         <h2>No students found</h2>
-        <p>No students found</p>
+        <p>There are no students yet. <a href="{% url 'students:register' %}">Register a new student?</a></p>
       </header>
     </section>
   {% endif %}

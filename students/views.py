@@ -1,4 +1,3 @@
-from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -24,7 +23,7 @@ class Detail(DetailView):
 
 
 # /students/register
-class StudentCreate(CreateView, SuccessMessageMixin):
+class StudentCreate(CreateView):
     template_name = 'students/register.html'
     model = Student
     fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
@@ -34,11 +33,10 @@ class StudentCreate(CreateView, SuccessMessageMixin):
 class StudentUpdate(UpdateView):
     template_name = 'students/update.html'
     model = Student
-    fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
+    # fields = ['name', 'matric', 'gender', 'level', 'department', 'image']
 
 
 # /students/delete/39
-class StudentDelete(DeleteView, SuccessMessageMixin):
+class StudentDelete(DeleteView):
     model = Student
     success_url = reverse_lazy('students:index')
-    success_message = '%(name)s was successfully deleted!'
